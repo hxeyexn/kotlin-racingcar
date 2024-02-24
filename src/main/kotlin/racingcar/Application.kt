@@ -1,7 +1,12 @@
 package racingcar
 
 import racingcar.controller.Race
+import racingcar.view.InputView
+import racingcar.view.OutputView
 
 fun main() {
-    Race().start()
+    Race(
+        OutputView,
+        InputView,
+    ).start()
 }

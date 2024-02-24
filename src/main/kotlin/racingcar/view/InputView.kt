@@ -3,7 +3,9 @@ package racingcar.view
 import racingcar.model.Cars
 import racingcar.model.RoundNumber
 
-class InputView {
+object InputView {
+    private const val COMMA = ","
+
     fun readCarNames(): List<String> {
         val namesString = readln()
         val names = namesString.split(COMMA)
@@ -17,9 +19,5 @@ class InputView {
 
         RoundNumber(roundNumber)
         return roundNumber
-    }
-
-    companion object {
-        private const val COMMA = ","
     }
 }

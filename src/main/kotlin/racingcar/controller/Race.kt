@@ -6,10 +6,10 @@ import racingcar.utils.RandomNumber
 import racingcar.view.InputView
 import racingcar.view.OutputView
 
-class Race {
-    private val outputView = OutputView()
-    private val inputView = InputView()
-
+class Race(
+    private val outputView: OutputView,
+    private val inputView: InputView,
+) {
     private val winner = Winner()
     private var names = listOf<String>()
 
