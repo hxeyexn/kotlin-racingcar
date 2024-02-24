@@ -1,6 +1,5 @@
 package racingcar.view
 
-import racingcar.model.Car
 import racingcar.model.Cars
 import racingcar.model.RoundNumber
 
@@ -9,10 +8,7 @@ class InputView {
         val namesString = readln()
         val names = namesString.split(COMMA)
 
-        names.forEach { name ->
-            Car(name)
-        }
-        Cars(names)
+        Cars.fromInput(names)
         return names
     }
 

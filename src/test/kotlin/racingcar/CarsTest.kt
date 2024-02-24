@@ -3,6 +3,7 @@ package racingcar
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import racingcar.model.Car
 import racingcar.model.Cars
 
 class CarsTest {
@@ -17,7 +18,7 @@ class CarsTest {
     @DisplayName("자동차 수가 두 대 미만일 때")
     @Test
     fun inputLessThanTwo() {
-        val names = listOf("lisa")
+        val names = listOf("lisa").map { Car(it) }
 
         assertThrows<IllegalArgumentException> {
             Cars(names)
@@ -31,7 +32,7 @@ class CarsTest {
             listOf(
                 "crong", "lisa", "hena", "pobi", "poro", "lufy", "joro", "sang", "frank", "usop",
                 "nami", "zzang", "huni", "chul", "yuri", "meang", "chae", "miri", "won", "shin", "bong", "siro",
-            )
+            ).map { Car(it) }
 
         assertThrows<IllegalArgumentException> {
             Cars(names)
@@ -44,7 +45,7 @@ class CarsTest {
         val names = listOf("crong", "crong")
 
         assertThrows<IllegalArgumentException> {
-            Cars(names)
+            Cars.fromInput(names)
         }
     }
 }
